@@ -12,4 +12,6 @@ Dengan manfaat utama sebagai berikut
 
 Value Object utamanya digunakan pada layer bisnis proses dan database layer.
 
+[<-- Bekerja Dengan Data](./02%20-%20Bekerja%20dengan%20Data.md)
+
 [--> Konsep Dasar: Data Transfer Object](./04%20-%20Konsep%20Dasar:%20Data%20Transfer%20Object.md)

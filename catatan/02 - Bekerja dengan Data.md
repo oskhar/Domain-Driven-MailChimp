@@ -10,4 +10,6 @@ Associative array adalah gumpalan data besar yang tidak terstruktur. Itu dapat m
 
 Jika anda memiliki pekerjaan dengan data di setiap layer dari software, Laravel dan DDD memberikan konsep yang sangat cerdik.
 
+[<-- Konsep Dasar: Domain-Driven Design](./01%20-%20Konsep%20Dasar:%20Domain-Driven%20Design.md)
+
 [--> Konsep Dasar: Value Object](./03%20-%20Konsep%20Dasar:%20Value%20Object.md)

@@ -6,6 +6,6 @@ Dua hal yang bisa kita pelajari dari DDD yaitu Strategic Design dan Technical De
 
 -   Domain dan namespace, dengan DDD kita dapat membuat struktur kode dari aplikasi kita menjadi lebih ekspresif dan logis.
 -   Pemilihan nama yang tepat, Contohnya jika "user" dalam bisnis anda merujuk pada "costumers" atau "employees" maka User Class harus dinamai sesuai dengan rujukan tersebut.
--   Nama Class dan Object yang informatif. Dalam project kecil mungkin belum terlihat pengaruhnya, tapi bagaimana jika ada 300 Model dan 500 Controller, kamu dipaksa menggali lebih dalam untuk memahami fitur dengan baik.
+-   Nama Class dan Object yang informatif. Dalam project kecil mungkin belum terlihat pengaruhnya, tapi bagaimana jika ada 300 Model dan 500 Controller, anda dipaksa menggali lebih dalam untuk memahami fitur dengan baik.
 
 [--> Bekerja dengan Data](./02%20-%20Bekerja%20dengan%20Data.md)

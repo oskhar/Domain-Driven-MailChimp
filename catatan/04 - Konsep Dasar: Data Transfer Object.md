@@ -15,4 +15,6 @@ Sampai sini mungkin anda bertanya, apa bedanya VO (Value Object) dengan DTOs (Da
 
 Dari perbedaan ini kita dapat menggabungkan kedua pendekatan ini menajadi hal yang mungkin lebih baik dalam penerapan di project aplikasi anda.
 
+[<-- Konsep Dasar: Value Object](./03%20-%20Konsep%20Dasar:%20Value%20Object.md)
+
 [--> Konsep Dasar: Repository](./05%20-%20Konsep%20Dasar:%20Repository.md)
