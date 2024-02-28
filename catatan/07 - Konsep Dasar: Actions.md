@@ -1,6 +1,6 @@
 # Actions
 
-Kita mungkin akan mengalami kekacauan besar jika membuat controller jadi gumpalan kode? Ya itu benar. Tapi coba kita lupakan tentang responsibilities sesaat. Membangun struktur kode secara teknis adalah tindakan yang buruk dalam aplikasi bisnis, itu sebabnya saya tidak suka repositori dan layanan digunakan bersama-sama.
+Kita mungkin akan mengalami kekacauan besar jika membuat controller jadi gumpalan kode? Ya itu benar. Tapi coba kita lupakan tentang responsibilities sesaat. Membangun struktur kode secara teknis adalah tindakan yang buruk dalam aplikasi bisnis, itu sebabnya saya tidak suka repositori dan service digunakan bersama-sama.
 
 Namun bagaimana jika kita menentukan tanggung jawab berdasarkan fitur, bukan hal teknis? Sekarang, kami memiliki class Action yang bersih dan dapat digunakan kembali. Dengan class Action tentu kita akan mendapat beberapa manfaat.
 
