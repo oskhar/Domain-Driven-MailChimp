@@ -1,6 +1,6 @@
-# Email-Marketing-Software
+# Domain-Driven MailChimp
 
-Pada project ini saya akan melakukan penerapan dari yang saya pelajari pada buku "Domain Driven Design with Laravel", Martin Joo
+Pada project ini saya akan melakukan penerapan dari yang saya pelajari pada "Domain Driven Design with Laravel", Martin Joo
 
 > `referensi`: [Buku DDD with Laravel](https://domain-driven-design-laravel.com/) <br> `note`: [Catatan materi](/catatan/01%20-%20Konsep%20Dasar:%20Domain-Driven%20Design.md)
 
