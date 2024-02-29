@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->string('first_name', 255)->nullable();
             $table->string('last_name', 255)->nullable();
             $table->foreignId('form_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
