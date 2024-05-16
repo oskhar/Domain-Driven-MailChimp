@@ -2,10 +2,8 @@
 
 namespace App\Domain\Subscriber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Domain\Shared\Models\BaseModel;
 
-class Form extends Model
+class Form extends BaseModel
 {
-    use HasFactory;
 }

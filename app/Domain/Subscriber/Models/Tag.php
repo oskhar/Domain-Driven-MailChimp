@@ -2,10 +2,8 @@
 
 namespace App\Domain\Subscriber\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Domain\Shared\Models\BaseModel;
 
-class Tag extends Model
+class Tag extends BaseModel
 {
-    use HasFactory;
 }

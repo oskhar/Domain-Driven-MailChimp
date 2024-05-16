@@ -3,11 +3,13 @@
 namespace App\Domain\Subscriber\Data;
 
 use App\Domain\Subscriber\Models\Form;
-use App\Models\Tag;
+use App\Domain\Subscriber\Models\Subscriber;
+use App\Domain\Subscriber\Models\Tag;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Validation\Rule;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
+use Spatie\LaravelData\Lazy;
 
 class SubscriberData extends Data
 {
@@ -16,8 +18,10 @@ class SubscriberData extends Data
     public readonly string $email,
     public readonly string $first_name,
     public readonly ?string $last_name,
-    public readonly ?DataCollection $tags,
-    public readonly ?FormData $form
+    public readonly ?Carbon $subscribed_at,
+    /** @var DataCollection<TagData> */
+    public readonly null|Lazy|DataCollection|string $tags,
+    public readonly null|Lazy|FormData $form
   ) {
   }
 
@@ -26,8 +30,7 @@ class SubscriberData extends Data
     return [
       'email' => [
         'required',
-        'email',
-        Rule::unique('subscriber', 'email')->ignore(request('subscriber'))
+        'email'
       ],
       'first_name' => ['required', 'string'],
       'last_name' => ['nullable', 'sometimes', 'string'],
@@ -41,9 +44,31 @@ class SubscriberData extends Data
     return self::from([
       ...$request->all(),
       'tags' => TagData::collect(
-        Tag::whereIn('id', $request->collect('tags_id'))->get()
+        Tag::whereIn('id', $request->tags_id)->get()
       ),
-      'form' => FormData::from(Form::findOrNew($request->form_id)),
+      'form' => FormData::from(
+        Form::findOrNew(
+          $request->form_id
+        )
+      ),
+    ]);
+  }
+
+  public static function fromModel(Subscriber $subscriber): self
+  {
+    return self::from([
+      ...$subscriber->toArray(),
+      'tags' => Lazy::whenLoaded(
+        'tags',
+        $subscriber,
+        fn() => TagData::collect($subscriber->tags)
+      ),
+      'form' => Lazy::whenLoaded(
+        'form',
+        $subscriber,
+        fn() => FormData::collect($subscriber->form)
+      ),
+      'full_name' => $subscriber->full_name
     ]);
   }
 }

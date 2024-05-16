@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Subscriber;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -11,7 +11,7 @@ class FormFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var Form
      */
     protected $model = Form::class;
 

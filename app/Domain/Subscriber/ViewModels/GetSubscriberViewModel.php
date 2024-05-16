@@ -10,15 +10,10 @@ use Illuminate\Pagination\Paginator;
 
 class GetSubscriberViewModel extends ViewModel
 {
-    private const PER_PAGE = 20;
 
-    public function __construct(private readonly int $currentPage)
+    public static function subscribers(int $current_page, int $per_page): Paginator
     {
-    }
-
-    public function subscribers(): Paginator
-    {
-        $items = Collection::with((['form', 'tags']))
+        $items = Subscriber::with((['form', 'tags']))
             ->orderBy('first_name')
             ->get()
             ->map(
@@ -26,19 +21,16 @@ class GetSubscriberViewModel extends ViewModel
                 SubscriberData::from($subscriber)
             );
 
-        $items = $items->slice(self::PER_PAGE * ($this->currentPage - 1));
+        $items = $items->slice($per_page * ($current_page - 1));
 
         return new Paginator(
             $items,
-            self::PER_PAGE,
-            $this->currentPage,
-            [
-                'path' => route('subscribers.index'),
-            ],
+            $per_page,
+            $current_page,
         );
     }
 
-    public function total(): int
+    public static function total(): int
     {
         return Subscriber::count();
     }

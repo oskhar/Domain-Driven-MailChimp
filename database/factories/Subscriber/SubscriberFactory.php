@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Subscriber;
 
+use App\Domain\Shared\Models\User;
+use App\Domain\Subscriber\Models\Form;
+use App\Domain\Subscriber\Models\Subscriber;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-use App\Models\Form;
-use App\Models\subscriber;
 
 class SubscriberFactory extends Factory
 {
@@ -25,6 +25,7 @@ class SubscriberFactory extends Factory
             'email' => $this->faker->safeEmail(),
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
+            'user_id' => User::factory(),
             'form_id' => Form::factory(),
         ];
     }

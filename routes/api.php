@@ -1,6 +1,9 @@
 <?php
 
-use App\Domain\Subscriber\Http\Controllers\SubscriberController;
+use App\Http\Controllers\Auth\GenerateTokenController;
+use App\Http\Controllers\CreateSubscriberController;
+use App\Http\Controllers\DestroyTokenController;
+use App\Http\Controllers\GetSubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['api', 'auth:sanctum'])->group(function () {
+    Route::post('subscribers', CreateSubscriberController::class);
+    Route::get('subscribers', GetSubscriberController::class);
+
+    Route::post('auth/logout', DestroyTokenController::class);
 });
 
-Route::post('subscriber', [SubscriberController::class, 'store']);
+Route::post('auth/login', GenerateTokenController::class);
